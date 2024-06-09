@@ -38,7 +38,7 @@
       }
     })
 
-  export function getEditor() {
+  export function getEditor(): null | Editor {
     return editor.$
   }
 </script>

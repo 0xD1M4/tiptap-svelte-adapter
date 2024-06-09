@@ -6,8 +6,9 @@ export default Node.create({
   name: 'svelteComponent',
 
   group: 'block',
+  content: 'inline*',
 
-  atom: true,
+  // atom: true,
 
   addAttributes() {
     return {
@@ -20,7 +21,7 @@ export default Node.create({
   },
 
   renderHTML({ HTMLAttributes }) {
-    return ['div', mergeAttributes(HTMLAttributes, { 'data-type': 'svelte-component' })]
+    return ['div', mergeAttributes(HTMLAttributes, { 'data-type': 'svelte-component' }), 0]
   },
 
   addNodeView() {

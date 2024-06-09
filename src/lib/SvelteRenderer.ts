@@ -2,7 +2,7 @@ import type { NodeViewProps } from '@tiptap/core'
 import { mount, unmount, type Component } from 'svelte'
 import { ss, type SS } from 'svelte-runes'
 
-export type ViewProps = { view: SS<NodeViewProps> }
+export type ViewProps<T = NodeViewProps> = { view: SS<T> }
 export type SvelteViewComponent = Component<ViewProps>
 
 export type SvelteRendererOptions = {

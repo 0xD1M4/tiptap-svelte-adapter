@@ -68,6 +68,14 @@ class SvelteNodeView extends NodeView<SvelteViewComponent, Editor, SvelteNodeVie
         [NODE_VIEW_CTX, { ondragstart: onDragStart }],
       ]),
     })
+
+    if (!this.contentDOMElement) return
+
+    const contentDom = this.dom.querySelector('[data-node-view-content]')
+
+    if (contentDom?.contains(this.contentDOMElement) === false) {
+      contentDom.appendChild(this.contentDOMElement)
+    }
   }
 
   get dom() {

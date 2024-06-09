@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { NodeViewWrapper, type ViewProps } from '$lib/index.js'
+  import { NodeViewWrapper, NodeViewContent, type ViewProps } from '$lib/index.js'
 
   let { view }: ViewProps = $props()
 
@@ -17,6 +17,14 @@
       This button has been clicked {view.$.node.attrs.count} times.
     </button>
   </div>
+
+  <div>
+    This part is editable:
+
+    <div class="editable">
+      <NodeViewContent></NodeViewContent>
+    </div>
+  </div>
 </NodeViewWrapper>
 
 <style>
@@ -26,5 +34,11 @@
     border-radius: 0.5rem;
     margin: 1rem 0;
     position: relative;
+  }
+
+  .editable {
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    border: 2px dashed #0d0d0d20;
   }
 </style>
