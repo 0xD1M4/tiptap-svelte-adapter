@@ -2,7 +2,7 @@
   import type { Action } from 'svelte/action'
   import { getAllContexts, untrack, type Snippet } from 'svelte'
   import { ss } from 'svelte-runes'
-  import { Editor, type EditorOptions } from '@tiptap/core'
+  import { Editor as CoreEditor, type EditorOptions } from '@tiptap/core'
   import EditorCtx from './EditorCtx.svelte'
 
   let {
@@ -12,16 +12,16 @@
   }: {
     as?: string
     options?: Partial<EditorOptions>
-    children?: Snippet<[{ editor: Editor }]>
+    children?: Snippet<[{ editor: CoreEditor }]>
   } = $props()
 
   const svelteContext = getAllContexts()
 
-  let editor = ss<null | Editor>(null)
+  let editor = ss<null | CoreEditor>(null)
 
   const mount: Action = (node) =>
     untrack(() => {
-      editor.$ = new Editor({
+      editor.$ = new CoreEditor({
         ...options,
         editorProps: {
           ...options.editorProps,
@@ -38,7 +38,7 @@
       }
     })
 
-  export function getEditor(): null | Editor {
+  export function getEditor(): null | CoreEditor {
     return editor.$
   }
 </script>
