@@ -1,8 +1,12 @@
 {
   "name": "tiptap-svelte-adapter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": "0xD1M4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xD1M4/tiptap-svelte-adapter"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
