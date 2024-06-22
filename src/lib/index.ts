@@ -8,6 +8,6 @@ export { default as NodeViewWrapper } from './NodeViewWrapper.svelte'
 export { default as NodeViewContent } from './NodeViewContent.svelte'
 export { default as BubbleMenu } from './BubbleMenu.svelte'
 
-export { getEditorCtx } from './ctx.js'
+export { getEditorCtx, NODE_VIEW_CTX } from './ctx.js'
 
 export type { ViewProps, SvelteViewComponent } from './SvelteRenderer.js'

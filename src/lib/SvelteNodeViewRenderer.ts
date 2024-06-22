@@ -59,6 +59,8 @@ class SvelteNodeView extends NodeView<SvelteViewComponent, Editor, SvelteNodeVie
     const target = document.createElement(as)
     target.dataset.type = this.node.type.name
 
+    target.setAttribute('class', this.node.attrs.class || '')
+
     this.renderer = new SvelteRenderer(this.component, {
       target,
       props,
